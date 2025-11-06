@@ -1,12 +1,11 @@
 import streamlit as st
-#from deep_translator import GoogleTranslator
 
-tab0, tab1, tab2, tab3, tab4, tab5 = st.tabs(["Home","Heróis", "VS","Desenvolvimento", "Temporada 1", "Regras"])
-#translator = GoogleTranslator(source="pt", target="en")
+tab0, tab1, tab2, tab3, tab4, tab5 = st.tabs(["Home","Guia Básico", "VS","Temporada 1", "Temporada 2", "Regras"])
+
 
 with tab0:
     st.title("BREX Academy")
-    #st.logo("imagens/logo.png")
+  
     col1, col2= st.columns(2, gap="large")
 with col1:
     linha_a = "Bem-vindo ao hub de informações da BREX!"
@@ -15,18 +14,10 @@ with col1:
     st.subheader(linha_a)
     st.write(linha_b)
     st.write(linha_c)
-    #trans_home = st.checkbox("Translate", key="trans_home")
-    #if trans_home:
-        # line_a = translator.translate(linha_a)
-        # line_b = translator.translate(linha_b)
-        # line_c = translator.translate(linha_c)
-        # st.subheader(line_a)
-        # st.write(line_b)
-        # st.write(line_c)   
+ 
 with col2:
     st.image("imagens/logo.png")
     
-########## Informação sobre os heróis
 with tab1:
     tanques = "Tanques: Têm vantagem contra aeronaves. São ideais para a linha de frente, absorvendo dano."
     misseis = "Mísseis: Têm vantagem contra aeronaves, mas recebem mais dano de tanques."
@@ -37,12 +28,8 @@ with tab1:
     heroi_ur = "Priorize heróis lendários (UR): Embora sejam difíceis de conseguir, são os mais poderosos. Paticipe de eventos como o 'Mercado Brilhante', para conseguir gratuitamente."
     frag_her = "Use fragmentos: Use fragmentos para aumentar as estrelas dos heróis, melhorando seus atributos."
     arma_excl = "Use armas exclusivas: Desbloquear armas exclusivas para heróis lendários aumenta consideravelmente a força."
-    with st.expander("Formação dos esquadrões-Formation of squads"):
+    with st.expander("Formação dos esquadrões"):
         st.subheader("Estratégia de formação e evolução de heróis-Hero training and evolution strategy")
-        #est_lan = st.radio("",["Português","English"], key="estrtégia_herois")
-        #if est_lan == "Português":
-            #trans_heroi = st.checkbox("Translate", key="trans_hero")
-        st.write(tanques)
         st.write(misseis)
         st.write(aeronaves)
         st.write(bonus_tipo)
@@ -52,27 +39,7 @@ with tab1:
         st.write(frag_her)
         st.write(arma_excl)
         st.video("https://youtu.be/ccrW8UV1nXk")
-        # if est_lan == "English":
-        #     tank = translator.translate(tanques)
-        #     missile = translator.translate(misseis)
-        #     aircraft = translator.translate(aeronaves)
-        #     bonus_type = translator.translate(bonus_tipo)
-        #     comb_type = translator.translate(comb_tipo)
-        #     est_attak = translator.translate(est_ataque)
-        #     heroe_ur = translator.translate(heroi_ur)
-        #     frag_heroes = translator.translate(frag_her)
-        #     weapon_exc = translator.translate(arma_excl)
-        #     st.write(tank)
-        #     st.write(missile)
-        #     st.write(aircraft)
-        #     st.write(bonus_type)
-        #     st.write(comb_type)
-        #     st.write(est_attak)
-        #     st.write(heroe_ur)
-        #     st.write(frag_heroes)
-        #     st.write(weapon_exc)
-        #     st.video("https://www.youtube.com/watch?v=6wtZAt2mA9Q")
-    ################
+   
     texto_geral= "A evolução é feita por meio de aprimoramento em múltiplos de 10 (10, 20, 30, etc.) para desbloquear bônus, utilizando itens como cerâmica, minério e ouro, e alcançando o nível 40 em armas lendárias para desbloquear armas míticas. "
     titulo_1 = "Priorização de equipamentos"
     herois_ataque = "Foque em Canhões para aumentar o dano e a taxa de acerto crítico. O Chip também é uma boa opção para aumentar o ataque e resistência contra todos os tipos de dano."
@@ -85,8 +52,6 @@ with tab1:
     
     with st.expander("Como evoluir as armas dos heróis"):
         st.subheader("Estratégia de evolução")
-        #est_armas = st.radio("", ["Português","English"], key="estrtégia_armas")
-        #if est_armas == "Português":
         st.write(texto_geral)
         st.write(titulo_1)
         st.write(herois_ataque)
@@ -97,27 +62,20 @@ with tab1:
         st.write(evol_3)
         st.write(evol_4)
         st.video("https://www.youtube.com/watch?v=rzH0__US7Pg")
-        # if est_armas == "English":
-        #     text_general = translator.translate(texto_geral)
-        #     title_1 = translator.translate(titulo_1)
-        #     heroes_attak = translator.translate(herois_ataque)
-        #     heroes_defense = translator.translate(herois_defesa)
-        #     title_2 = translator.translate(titulo_1)
-        #     evolution_1 = translator.translate(evol_1)
-        #     evolution_2 = translator.translate(evol_2)
-        #     evolution_3 = translator.translate(evol_3)
-        #     evolution_4 = translator.translate(evol_4)
-        #     st.write(text_general)
-        #     st.write(title_1)
-        #     st.write(heroes_attak)
-        #     st.write(heroes_defense)
-        #     st.write(title_2)
-        #     st.write(evolution_1)
-        #     st.write(evolution_2)
-        #     st.write(evolution_3)
-        #     st.write(evolution_4)
-        #     st.video("https://www.youtube.com/watch?v=IS5hl-gr1yk&t=10s")
-    
+       
+    with st.expander("Guia de construçãoes"):
+        st.write("Aprimore a Sede: Esta é a prioridade máxima, pois desbloqueia todos os outros edifícios, novas unidades e funcionalidades.")
+        st.write("Acompanhe os requisitos: Mantenha outras construções (como o muro e o centro de tecnologia) atualizadas para atender aos requisitos mínimos da Sede em cada nível.")
+        st.write("Otimize a pesquisa: Invista em pesquisas que reduzam o custo de recursos e acelerem a construção e treinamento, principalmente as que estão no meio da árvore de pesquisa.")
+        st.write("Use a profissão de engenheiro: Se escolher essa profissão, foque em diminuir o custo de recursos para construção e acelerar a pesquisa. O engenheiro também aumenta o suporte para a construção cooperativa e a produção rápida de recursos.")
+        st.write("Use buff de aceleração de construção do ministério e itens da profissão de engenheiro, para reduzir o tempo das contruções.")
+        st.image("imagens/sede_up.jpg")
+   
+    with st.expander("Pesquisa de tecnologia"):
+        st.video("https://www.youtube.com/watch?v=PE3JzjPH118")
+    with st.expander("Treinamento de tropas"):
+        st.subheader("Treinamento cascata:")
+        st.video("https://youtu.be/oeWlkY_FqhI")
 
 with tab2:
     st.subheader("Otimizando a pontuação do VS")
@@ -135,20 +93,6 @@ with tab2:
         st.video("https://www.youtube.com/watch?v=u3ChgoXPe_g&list=PL5Ct1GWEEkBQ-IlLsynppZWCiIgFupQ8e&index=6")
     
 with tab3:
-    with st.expander("Guia de construçãoes"):
-        st.write("Aprimore a Sede: Esta é a prioridade máxima, pois desbloqueia todos os outros edifícios, novas unidades e funcionalidades.")
-        st.write("Acompanhe os requisitos: Mantenha outras construções (como o muro e o centro de tecnologia) atualizadas para atender aos requisitos mínimos da Sede em cada nível.")
-        st.write("Otimize a pesquisa: Invista em pesquisas que reduzam o custo de recursos e acelerem a construção e treinamento, principalmente as que estão no meio da árvore de pesquisa.")
-        st.write("Use a profissão de engenheiro: Se escolher essa profissão, foque em diminuir o custo de recursos para construção e acelerar a pesquisa. O engenheiro também aumenta o suporte para a construção cooperativa e a produção rápida de recursos.")
-        st.write("Use buff de aceleração de construção do ministério e itens da profissão de engenheiro, para reduzir o tempo das contruções.")
-        st.image("imagens/sede_up.jpg")
-    ###"Quartel",
-    with st.expander("Pesquisa de tecnologia"):
-        st.video("https://www.youtube.com/watch?v=PE3JzjPH118")
-        st.subheader("Treinamento cascata:")
-        st.video("https://youtu.be/oeWlkY_FqhI")
-
-with tab4:
     with st.expander("Principais mudanças na primeira temorada"):
         st.write("Mapa e conquistas: Um novo mapa foi adicionado, com novas áreas a serem conquistadas.")
         st.write("Novos recursos e vírus: A temporada introduz um vírus, que requer proteínas imunes para curar.")
@@ -169,6 +113,14 @@ with tab4:
     with st.expander("Guia de Estratégia para Expedição na Zona de Guerra"):
         st.link_button("Guia de estratégia","https://firstfungroup.zendesk.com/hc/pt-br/articles/44710611930003--Guia-de-Estrat%C3%A9gia-para-Expedi%C3%A7%C3%A3o-na-Zona-de-Guerra")
     
+
+with tab4: #Temporada 2
+    with st.expander("Recursos e Construções"):
+        st.video("https://www.youtube.com/watch?v=GQ0g0AYMfyw")
+    with st.expander("Nevasca e Captura de cidades"):
+        st.video("https://www.youtube.com/watch?v=ITvQZeeEo_I")
+    with st.expander("Solo raro e Violet UR"):
+        st.video("https://www.youtube.com/watch?v=DyCnNgE8Kbw")
     
 with tab5:
     with st.expander("Regras gerais"):
