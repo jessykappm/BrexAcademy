@@ -115,6 +115,8 @@ with tab3:
     
 
 with tab4: #Temporada 2
+    with st.expander("Eventos Prévios"):
+        st.video("https://www.youtube.com/watch?v=ZezO115T7q0&list=WL&index=19&t=35s")
     with st.expander("Recursos e Construções"):
         st.video("https://www.youtube.com/watch?v=GQ0g0AYMfyw")
     with st.expander("Nevasca e Captura de cidades"):
